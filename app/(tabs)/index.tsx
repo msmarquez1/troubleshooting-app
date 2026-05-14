@@ -42,7 +42,9 @@ export default function HomeScreen() {
     return (
       <ScrollView style={styles.container}>
         <TouchableOpacity
-          onPress={() => setSelectedFault(null)}
+          onPress={() => {
+            setSelectedFault(null);
+          }}
           style={styles.backButton}
         >
           <Text style={styles.backButtonText}>← Back to faults</Text>
@@ -174,8 +176,9 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
+    paddingTop: 70,
+    paddingHorizontal: 20,
+    backgroundColor: "#fff",
   },
 
   header: {
