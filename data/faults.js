@@ -1,3 +1,4 @@
+import { converteamFaults } from "./converteamFaults";
 export const faults = [
   {
     "id": "916",
@@ -10374,3 +10375,4 @@ export const faults = [
     "extra2": ""
   }
 ];
+export const allFaults = [...faults, ...converteamFaults];

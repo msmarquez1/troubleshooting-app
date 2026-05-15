@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import { faults } from '../../data/faults';
+import { allFaults } from '../../data/faults';
 
 export default function HomeScreen() {
   const [search, setSearch] = useState('');
@@ -18,10 +18,10 @@ export default function HomeScreen() {
 
   const systems = [
     'ALL',
-    ...new Set(faults.map((fault: any) => fault.system).filter(Boolean)),
+    ...new Set(allFaults.map((fault: any) => fault.system).filter(Boolean)),
   ];
 
-  const filteredFaults = faults.filter((fault: any) => {
+  const filteredFaults = allFaults.filter((fault: any) => {
     const text = `${fault.id} ${fault.title} ${fault.system} ${fault.description} ${fault.check}`.toLowerCase();
 
     const matchesSearch = text.includes(search.toLowerCase());
@@ -108,7 +108,7 @@ export default function HomeScreen() {
       />
 
       <Text style={styles.count}>
-        Showing {filteredFaults.length} of {faults.length} faults
+        Showing {filteredFaults.length} of {allFaults.length} faults
       </Text>
 
       <ScrollView
